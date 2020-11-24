@@ -6,7 +6,29 @@
 
     <!-- comment -->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding">
+
+        <TextView
+            android:id="@+id/firstTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="@string/first_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@color/colorPrimary"
+            android:text="@string/second_text" />
+    </LinearLayout>
+
     <TextView
+        android:id="@+id/textViewPurpleContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
@@ -26,8 +48,10 @@
         android:src="@drawable/android" />
 
     <Button
+        android:id="@+id/buttonGetContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="buttonGetContentOnClick"
         android:layout_margin="@dimen/small_margin"
         android:background="@color/colorAccent"
         android:padding="@dimen/small_padding"
@@ -41,12 +65,14 @@
         android:background="@color/colorPrimary" />
 
     <EditText
+        android:id="@+id/editTextFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/full_name"
         android:inputType="textCapWords" />
 
     <CheckBox
+        android:id="@+id/checkboxTermsAndConditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
@@ -81,11 +107,11 @@
         android:checked="true"
         android:text="@string/wi_fi" />
 
-    <SeekBar
+    <SeekBar android:id="@+id/seekBarChallenges"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="70" />
+        android:max="10"
+        android:progress="3" />
 
     <SearchView
         android:layout_width="match_parent"
@@ -94,5 +120,5 @@
 
     <ProgressBar
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -8,4 +8,13 @@
     <string name="i_am_a_button">I am a button</string>
     <string name="full_name">Full name</string>
     <string name="a_accept_t_and_c">A accept T and C</string>
+    <string name="first_text">first text</string>
+    <string name="second_text">second text</string>
+    <string name="new_text">This is the new text</string>
+    <string name="default_full_name">Magda Miu</string>
+    <string name="checkbox_checked">Checkbox was checked</string>
+    <string name="checkbox_unchecked">Checkbox was unchecked</string>
+    <string name="checkbox_state_checked">Checkbox checked</string>
+    <string name="checkbox_state_unchecked">Checkbox unchecked</string>
+    <string name="error_missing_text">Please add some text</string>
 </resources>
