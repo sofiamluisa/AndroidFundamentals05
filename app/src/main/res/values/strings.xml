@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidFundamentalsGroup1</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="wi_fi">Wi-fi</string>
+    <string name="search_for_names">Search for names</string>
+    <string name="our_first_textview">Our first TextView</string>
+    <string name="i_am_a_button">I am a button</string>
+    <string name="full_name">Full name</string>
+    <string name="a_accept_t_and_c">A accept T and C</string>
 </resources>
