@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/extra_large_space"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary" />
+
+    <!-- gravity relative to the content, layout_gravity relative to the parent -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_space"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent" />
+</FrameLayout>

@@ -4,14 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private final String ANDROID_DOCS = "https://developer.android.com/";
 
     private TextView oneTextView;
     private EditText editTextUserFullName;
@@ -19,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekBarCountChallenges;
     private TextView textViewPurpleContent;
     private Button buttonGetContent;
+    private WebView webViewAndroid;
+    private Spinner spinnerAndroidVersions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +38,53 @@ public class MainActivity extends AppCompatActivity {
         // seteaza layout-ul asociat activatii MainActivity
         // setContentView(R.layout.activity_main);
         // asociem views_sample_1 ca layout al activitatii MainActivity
-        setContentView(R.layout.views_sample_1);
+        // setContentView(R.layout.views_sample_1);
+        // displayViewsSample1();
 
+        // run ScrollView sample
+        // setContentView(R.layout.views_sample_scroll_view);
+
+        // run WebView sample
+        // setContentView(R.layout.views_sample_web_view);
+        // loadUrlInWebView();
+
+        // run Spinner sample
+        setContentView(R.layout.views_sample_spinner);
+        setupSpinnerAdapter();
+    }
+
+    // step 1 = get the data source for the Spinner
+    private List<String> getSpinnerAndroidDataSource() {
+        List<String> androidVersions = new ArrayList<>();
+        androidVersions.add("Cupcake");
+        androidVersions.add("Donut");
+        androidVersions.add("Eclair");
+        androidVersions.add("KitKat");
+        androidVersions.add("Pie");
+        return androidVersions;
+    }
+
+    // step 2 = get the adapter
+    private ArrayAdapter<String> getSpinnerAdapter() {
+        return new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getSpinnerAndroidDataSource());
+    }
+
+    // step 3 = set the adapter to the spinner
+    private void setupSpinnerAdapter() {
+        spinnerAndroidVersions = findViewById(R.id.spinnerAndroidVersions);
+        spinnerAndroidVersions.setAdapter(getSpinnerAdapter());
+        // let the Spinner to know that we implemented the setOnItemSelectedListener event at the Activity level
+        spinnerAndroidVersions.setOnItemSelectedListener(this);
+    }
+
+    private void loadUrlInWebView() {
+        webViewAndroid = findViewById(R.id.webViewAndroid);
+        WebSettings webSettings = webViewAndroid.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webViewAndroid.loadUrl(ANDROID_DOCS);
+    }
+
+    private void displayViewsSample1() {
         oneTextView = findViewById(R.id.firstTextView);
         oneTextView.setText(R.string.new_text);
 
@@ -73,9 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });*/
-
     }
-
 
     public void buttonGetContentOnClick(View view) {
         // preluam contentul din EditText si il convertim in String
@@ -85,5 +140,18 @@ public class MainActivity extends AppCompatActivity {
         } else {
             editTextUserFullName.setError(getString(R.string.error_missing_text));
         }
+    }
+
+    // params: list, child, position, adapter.getItemId(position)
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long itemId) {
+        List<String> androidVersions = getSpinnerAndroidDataSource();
+        String selectedVersion = androidVersions.get(position);
+        Toast.makeText(MainActivity.this, selectedVersion, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

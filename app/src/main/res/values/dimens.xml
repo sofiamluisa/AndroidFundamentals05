@@ -4,4 +4,7 @@
     <dimen name="small_padding">16dp</dimen>
     <dimen name="medium_font_size">23sp</dimen>
     <dimen name="small_dimension">8dp</dimen>
+    <dimen name="extra_large_space">128dp</dimen>
+    <dimen name="large_space">64dp</dimen>
+    <dimen name="medium_space">32dp</dimen>
 </resources>
