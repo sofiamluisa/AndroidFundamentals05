@@ -7,4 +7,5 @@
     <dimen name="extra_large_space">128dp</dimen>
     <dimen name="large_space">64dp</dimen>
     <dimen name="medium_space">32dp</dimen>
+    <dimen name="extra_small_padding">4dp</dimen>
 </resources>

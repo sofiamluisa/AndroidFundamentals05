@@ -1,8 +1,11 @@
 package com.android.androidfundamentalsgroup1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Button buttonGetContent;
     private WebView webViewAndroid;
     private Spinner spinnerAndroidVersions;
+    private RecyclerView recyclerViewEmails;
+
+    private List<Email> emails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +55,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // loadUrlInWebView();
 
         // run Spinner sample
-        setContentView(R.layout.views_sample_spinner);
-        setupSpinnerAdapter();
+        // setContentView(R.layout.views_sample_spinner);
+        // setupSpinnerAdapter();
+
+        // run RecyclerView sample
+        setContentView(R.layout.views_sample_recycler_view);
+        displayEmailsList();
     }
 
+    // RecyclerView implementation
+    // get data source
+    private void inbox() {
+        emails = new ArrayList<>();
+        Email email = null;
+        for (int i = 0; i < 25; i++) {
+            email = new Email(0, "Magda " + i, "Hello Android " + i, "This is an intro about Android");
+            emails.add(email);
+        }
+    }
+
+    // set the layout manager, in our case LinearLayoutManager because it's a list of emails
+    private void setEmailsLayoutManager() {
+        recyclerViewEmails = findViewById(R.id.recyclerViewEmails);
+        recyclerViewEmails.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void setEmailsAdapter() {
+        recyclerViewEmails.setAdapter(new EmailAdapter(this, emails));
+    }
+
+    private void displayEmailsList() {
+        inbox();
+        setEmailsLayoutManager();
+        setEmailsAdapter();
+    }
+
+    // Spinner implementation
     // step 1 = get the data source for the Spinner
     private List<String> getSpinnerAndroidDataSource() {
         List<String> androidVersions = new ArrayList<>();
@@ -152,6 +190,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }
