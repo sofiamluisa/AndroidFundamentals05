@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+// default adapter = ArrayAdapter just like for Spinner implementation
+// custom adapter = EmailAdapter defined based on our scenario
+// step 6 = Extend RecyclerView.Adapter in a separated class
 public class EmailAdapter extends RecyclerView.Adapter<EmailViewHolder> {
     private List<Email> emails;
     private Context context;

@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // run RecyclerView sample
         setContentView(R.layout.views_sample_recycler_view);
         displayEmailsList();
+
+        int result = sum(10, 5, 4);
+        Logging.show("MainActivity result = ", result + "");
+        result++;
+    }
+
+    private int sum(int a, int b, int c) {
+        int result = a / b;
+        return result + c;
     }
 
     // RecyclerView implementation
@@ -74,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
+    // step 4 = Define the LayoutManager in activity
     // set the layout manager, in our case LinearLayoutManager because it's a list of emails
     private void setEmailsLayoutManager() {
         recyclerViewEmails = findViewById(R.id.recyclerViewEmails);
@@ -85,8 +95,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void displayEmailsList() {
+        // data source - checked
         inbox();
+
+        // layout manager - checked
         setEmailsLayoutManager();
+
+        // adapter - checked
         setEmailsAdapter();
     }
 

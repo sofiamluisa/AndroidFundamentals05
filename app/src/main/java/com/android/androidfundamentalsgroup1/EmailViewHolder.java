@@ -7,12 +7,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+// step 5 = Extend RecyclerView.ViewHolder in a separated class
 // wrapper for email_item.xml views (translate the views in Java objects)
 // 1:1 relation between each view from item and each field from Java class EmailViewHolder
 public class EmailViewHolder extends RecyclerView.ViewHolder{
 
-    private TextView textViewFrom, textViewSubject, textViewBody;
-    private LinearLayout linearLayoutEmail;
+    private final TextView textViewFrom, textViewSubject, textViewBody;
+    private final LinearLayout linearLayoutEmail;
 
     public EmailViewHolder(@NonNull View itemView) {
         super(itemView);
