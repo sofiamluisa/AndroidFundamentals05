@@ -21,4 +21,6 @@
     <string name="bottom_long_text">The source code has been used to develop variants of Android on a range of other electronics, such as game consoles, digital cameras, portable media players, PCs and others, each with a specialized user interface. Some well known derivatives include Android TV for televisions and Wear OS for wearables, both developed by Google. Software packages on Android, which use the APK format, are generally distributed through proprietary application stores like Google Play Store, Samsung Galaxy Store, and Huawei AppGallery, or open source platforms like Aptoide or F-Droid.  Android has been the best-selling OS worldwide on smartphones since 2011 and on tablets since 2013. As of May 2017, it has over two billion monthly active users, the largest installed base of any operating system, and as of August 2020, the Google Play Store features over 3 million apps.[15] The current stable version is Android 11, released on September 8, 2020.</string>
     <string name="select_an_android_version">Select an Android version</string>
     <string name="textview">TextView</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="open_second_activity">Open Second Activity</string>
 </resources>
