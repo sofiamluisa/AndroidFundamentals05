@@ -1,244 +1,208 @@
 package com.android.androidfundamentalsgroup1;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private final String ANDROID_DOCS = "https://developer.android.com/";
     private final String TAG = "MainActivity";
 
-    private TextView oneTextView;
-    private EditText editTextUserFullName;
-    private CheckBox checkBoxTermsAndConditions;
-    private SeekBar seekBarCountChallenges;
-    private TextView textViewPurpleContent;
-    private Button buttonGetContent;
-    private WebView webViewAndroid;
-    private Spinner spinnerAndroidVersions;
-    private RecyclerView recyclerViewEmails;
+    public static final Pattern EMAIL_ADDRESS = null;
+
 
     private List<Email> emails;
+
+    //TEMA 2
+    //TEMA 2
+    private TextView loginTextView;
+    private EditText editTextemail;
+    private EditText editTextPhoneNr;
+    private CheckBox checkboxTC;
+    private Button submitButton;
+    private Spinner spinnerVersionsAndroid;
+    private TextView submitTextView;
+
+    //TEMA 3
+
+    private List<Student> studentList;
+    private RecyclerView recyclerViewStudents;
+    private Button buttonSnow;
+    private Button buttonBells;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // seteaza layout-ul asociat activatii MainActivity
-        // setContentView(R.layout.activity_main);
-        // asociem views_sample_1 ca layout al activitatii MainActivity
-        // setContentView(R.layout.views_sample_1);
-        // displayViewsSample1();
 
-        // run ScrollView sample
-        // setContentView(R.layout.views_sample_scroll_view);
+        //TEMA EMAIL
+        // setContentView(R.layout.views_tema_email);
+//        editTextemail = findViewById(R.id.emailAddressText);
+//        editTextPhoneNr = findViewById(R.id.editTextPhone);
+//        checkboxTC = findViewById(R.id.checkBox);
+//        submitButton = findViewById(R.id.submitButton);
+//        submitTextView = findViewById(R.id.submitTextView);
+//
+//        submitButton.setOnClickListener(new View.OnClickListener() {
+//            @SuppressLint("SetTextI18n")
+//            @Override
+//            public void onClick(View view) {
+//                String contentEmail = editTextemail.getText().toString();
+//                String contentPhone = editTextPhoneNr.getText().toString();
+//
+//                Boolean completed = true;
+//                if (!isEmailValid(contentEmail)) {
+//                    editTextemail.setError(getString(R.string.mail_not_valid));
+//                    completed = false;
+//                }
+//                if (!isPhoneValid(contentPhone)) {
+//                    editTextPhoneNr.setError(getString(R.string.phone_not_valid));
+//                    completed = false;
+//                }
+//                if (completed) {
+//                    Boolean tcChecked = false;
+//                    if (checkboxTC.isChecked())
+//                        tcChecked = true;
+//                    submitTextView.setText(getString(R.string.email) + ": " + contentEmail
+//                            + "\n" + getString(R.string.phone) + ": " + contentPhone
+//                            + "\n" + getString(R.string.a_accept_t_and_c) + ": "
+//                            + tcChecked.toString());
+//                }
+//            }
+//        });
 
-        // run WebView sample
-        // setContentView(R.layout.views_sample_web_view);
-        // loadUrlInWebView();
 
-        // run Spinner sample
-        // setContentView(R.layout.views_sample_spinner);
-        // setupSpinnerAdapter();
+        //TEMA SCROLL VIEW
+//        setContentView(R.layout.views_tema_scroll);
 
-        // run RecyclerView sample
-        // setContentView(R.layout.views_sample_recycler_view);
-        // displayEmailsList();
+        //TEMA SPINNER
+//        setContentView(R.layout.views_tema_spinner);
+//        setupSpinnerAdapter();
 
-        setContentView(R.layout.activity_main);
+//        TEMA FRAME
+//        setContentView(R.layout.views_tema_frame);
 
-        Logging.show(TAG, "onCreate");
+        //TEMA RECYCLERVIEW
+        //  setContentView(R.layout.views_tema_recycler_view_students);
 
-        int result = sum(10, 5, 4);
-        Logging.show("MainActivity result = ", result + "");
-        result++;
+        // displayStudents();
+        //TEMA CODECHALLANGE3
+        setContentView(R.layout.views_tema_codechallange3);
+        buttonSnow = findViewById(R.id.buttonSnow);
+        buttonSnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "It's snowing", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        buttonBells = findViewById(R.id.buttonBells);
+        buttonBells.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "The bells are ringing", Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+
+
+    //TEMA EMAIL
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        Logging.show(TAG, "onStart");
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Logging.show(TAG, "onResume");
-    }
+    //TEMA SPINNER
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Logging.show(TAG, "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Logging.show(TAG, "onStop");
-    }
-
-    private int sum(int a, int b, int c) {
-        int result = a / b;
-        return result + c;
-    }
-
-    // RecyclerView implementation
-    // get data source
-    private void inbox() {
-        emails = new ArrayList<>();
-        Email email = null;
-        for (int i = 0; i < 25; i++) {
-            email = new Email(0, "Magda " + i, "Hello Android " + i, "This is an intro about Android");
-            emails.add(email);
-        }
-    }
-
-    // step 4 = Define the LayoutManager in activity
-    // set the layout manager, in our case LinearLayoutManager because it's a list of emails
-    private void setEmailsLayoutManager() {
-        recyclerViewEmails = findViewById(R.id.recyclerViewEmails);
-        recyclerViewEmails.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    private void setEmailsAdapter() {
-        recyclerViewEmails.setAdapter(new EmailAdapter(this, emails));
-    }
-
-    private void displayEmailsList() {
-        // data source - checked
-        inbox();
-
-        // layout manager - checked
-        setEmailsLayoutManager();
-
-        // adapter - checked
-        setEmailsAdapter();
-    }
-
-    // Spinner implementation
-    // step 1 = get the data source for the Spinner
     private List<String> getSpinnerAndroidDataSource() {
-        List<String> androidVersions = new ArrayList<>();
-        androidVersions.add("Cupcake");
-        androidVersions.add("Donut");
-        androidVersions.add("Eclair");
-        androidVersions.add("KitKat");
-        androidVersions.add("Pie");
-        return androidVersions;
+        List<String> androidExample = new ArrayList<>();
+        androidExample.add("Cupcake");
+        androidExample.add("Pie");
+        androidExample.add("Eclair");
+        androidExample.add("Donut");
+        return androidExample;
     }
 
-    // step 2 = get the adapter
     private ArrayAdapter<String> getSpinnerAdapter() {
         return new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getSpinnerAndroidDataSource());
     }
 
-    // step 3 = set the adapter to the spinner
     private void setupSpinnerAdapter() {
-        spinnerAndroidVersions = findViewById(R.id.spinnerAndroidVersions);
-        spinnerAndroidVersions.setAdapter(getSpinnerAdapter());
-        // let the Spinner to know that we implemented the setOnItemSelectedListener event at the Activity level
-        spinnerAndroidVersions.setOnItemSelectedListener(this);
+        spinnerVersionsAndroid = findViewById(R.id.spinnerVersionsAndroid);
+        spinnerVersionsAndroid.setAdapter(getSpinnerAdapter());
+        spinnerVersionsAndroid.setOnItemSelectedListener(this);
     }
 
-    private void loadUrlInWebView() {
-        webViewAndroid = findViewById(R.id.webViewAndroid);
-        WebSettings webSettings = webViewAndroid.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webViewAndroid.loadUrl(ANDROID_DOCS);
-    }
-
-    private void displayViewsSample1() {
-        oneTextView = findViewById(R.id.firstTextView);
-        oneTextView.setText(R.string.new_text);
-
-        editTextUserFullName = findViewById(R.id.editTextFullName);
-        editTextUserFullName.setText(R.string.default_full_name);
-
-        checkBoxTermsAndConditions = findViewById(R.id.checkboxTermsAndConditions);
-        if (checkBoxTermsAndConditions.isChecked()) {
-            checkBoxTermsAndConditions.setChecked(false);
-            oneTextView.setText(R.string.checkbox_checked);
-        } else {
-            checkBoxTermsAndConditions.setChecked(true);
-            oneTextView.setText(R.string.checkbox_unchecked);
-        }
-
-        checkBoxTermsAndConditions.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (compoundButton.isChecked()) {
-                    editTextUserFullName.setText(R.string.checkbox_state_checked);
-                } else {
-                    editTextUserFullName.setText(R.string.checkbox_state_unchecked);
-                }
-            }
-        });
-
-        seekBarCountChallenges = findViewById(R.id.seekBarChallenges);
-        seekBarCountChallenges.setProgress(5);
-
-        textViewPurpleContent = findViewById(R.id.textViewPurpleContent);
-
-        buttonGetContent = findViewById(R.id.buttonGetContent);
-        // block comment/un-comment CTRL + Shift + /
-        /*buttonGetContent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // preluam contentul din EditText si il convertim in String
-                String contentFromEditText = editTextUserFullName.getText().toString();
-                if (contentFromEditText != null && contentFromEditText.length() > 0) {
-                    textViewPurpleContent.setText(contentFromEditText);
-                } else {
-                    editTextUserFullName.setError(getString(R.string.error_missing_text));
-                }
-            }
-        });*/
-    }
-
-    public void buttonGetContentOnClick(View view) {
-        // preluam contentul din EditText si il convertim in String
-        String contentFromEditText = editTextUserFullName.getText().toString();
-        if (contentFromEditText != null && contentFromEditText.length() > 0) {
-            textViewPurpleContent.setText(contentFromEditText);
-        } else {
-            editTextUserFullName.setError(getString(R.string.error_missing_text));
-        }
-    }
-
-    // params: list, child, position, adapter.getItemId(position)
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long itemId) {
-        List<String> androidVersions = getSpinnerAndroidDataSource();
-        String selectedVersion = androidVersions.get(position);
-        Toast.makeText(MainActivity.this, selectedVersion, Toast.LENGTH_LONG).show();
+        List<String> androidExample = getSpinnerAndroidDataSource();
+        String selectVersion = androidExample.get(position);
+        Toast.makeText(MainActivity.this, selectVersion, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    //RECYCLERVIEW
+
+    private void students() {
+        studentList = new ArrayList<>();
+        Student student = null;
+        for (int i = 0; i < 25; i++) {
+            student = new Student("firstName " + i, "lastName " + i);
+            studentList.add(student);
+        }
     }
 
-    public void buttonOpenSecondActivityOnClick(View view) {
-        Intent secondActivity = new Intent(MainActivity.this, SecondActivity.class);
-        startActivity(secondActivity);
+    private void setStudentLayoutManager() {
+        recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
+        recyclerViewStudents.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    private void setStudentAdapter() {
+        recyclerViewStudents.setAdapter(new StudentAdapter(this, studentList));
+    }
+
+    private void displayStudents() {
+        students();
+        setStudentLayoutManager();
+        setStudentAdapter();
+    }
+
+
+    private boolean isEmailValid(String email) {
+        if (email == null || email.length() <= 0) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        }
+    }
+
+    private boolean isPhoneValid(String phone) {
+        if (phone == null || phone.length() <= 0) {
+            return false;
+        } else {
+            return Patterns.PHONE.matcher(phone).matches();
+        }
+
+    }
+
 }
+
+
+

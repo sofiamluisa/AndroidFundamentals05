@@ -23,4 +23,28 @@
     <string name="textview">TextView</string>
     <string name="hello_world">Hello World!</string>
     <string name="open_second_activity">Open Second Activity</string>
+    <string name="terms_conditions">I accept Terms and Conditions</string>
+    <string name="submit">SUBMIT</string>
+    <string name="info_scroll_view">A view group that allows the view hierarchy placed within it to be scrolled. Scroll view may have only one direct child placed within it. To add multiple views within the scroll view, make the direct child you add a view group, for example LinearLayout, and place additional views within that LinearLayout.</string>
+    <string name="spinner_example">Spinner Example</string>
+    <string name="mail_not_valid">Fill the input with a valid email address</string>
+    <string name="phone_not_valid">Fill the input with a valid phone number</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="from_luisa">From Luisa</string>
+    <string name="happy_holidays">Happy Holidays!</string>
+    <string name="merry_christmas">
+      <br>
+         Have yourself a merry little Christmas
+      </br>
+      <br>
+         Let your heart be light
+      </br>
+      <br>
+         From now on, our troubles will be out of sight
+      </br>
+   </string>
+    <string name="gingles_bells">Gingles bells</string>
+    <string name="let_it_snow">Let it snow</string>
+
 </resources>

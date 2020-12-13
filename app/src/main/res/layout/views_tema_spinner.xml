@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/select_an_android_version" />
+        android:text="@string/spinner_example" />
 
     <Spinner
-        android:id="@+id/spinnerAndroidVersions"
+        android:id="@+id/spinnerVersionsAndroid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
