@@ -1,5 +1,6 @@
 package com.android.androidfundamentalsgroup1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private final String ANDROID_DOCS = "https://developer.android.com/";
+    public static final String MESSAGE_KEY = "message";
+    private static final int REQUEST_CODE_MESSAGE = 12;
     private final String TAG = "MainActivity";
 
     private TextView oneTextView;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private WebView webViewAndroid;
     private Spinner spinnerAndroidVersions;
     private RecyclerView recyclerViewEmails;
+    private EditText editTextMessage;
 
     private List<Email> emails;
 
@@ -65,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // displayEmailsList();
 
         setContentView(R.layout.activity_main);
+        editTextMessage = findViewById(R.id.ediTextMessage);
 
         Logging.show(TAG, "onCreate");
 
@@ -239,6 +244,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void buttonOpenSecondActivityOnClick(View view) {
         Intent secondActivity = new Intent(MainActivity.this, SecondActivity.class);
+        secondActivity.putExtra(MESSAGE_KEY, getString(R.string.hello_message));
         startActivity(secondActivity);
+    }
+
+    public void buttonCommunicationBetweenActivitiesOnClick(View view) {
+        Intent secondActivity = new Intent(MainActivity.this, SecondActivity.class);
+        String message = editTextMessage.getText().toString();
+        if (message != null && message.length() > 0) {
+            secondActivity.putExtra(MESSAGE_KEY, message);
+        } else {
+            editTextMessage.setError(getString(R.string.error_missing_message));
+        }
+        startActivityForResult(secondActivity, REQUEST_CODE_MESSAGE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_MESSAGE && resultCode == RESULT_OK) {
+            String result = data.getStringExtra(MESSAGE_KEY);
+            Logging.show(TAG, result);
+        }
+    }
+
+    public void buttonOpenFormActivityOnClick(View view) {
+        Intent formActivity = new Intent(MainActivity.this, FormActivity.class);
+        startActivity(formActivity);
     }
 }
