@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/small_padding"
+    tools:context=".styles.StyleSamplesActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="@dimen/small_corner_radius"
+        app:cardElevation="@dimen/small_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/large_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_text_in_a_card_view"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                style="@style/WhiteTextAndMarginTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/second_text_in_a_card_view" />
+
+            <TextView
+                style="@style/WhiteTextAndMarginTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/third_text_in_a_card_view" />
+
+            <TextView
+                style="@style/WhiteTextMarginTopAndBigFontSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forth_text_in_a_card_view" />
+
+            <TextView
+                style="@style/WhiteTextMarginTopAndBigFontSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_text_in_card" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

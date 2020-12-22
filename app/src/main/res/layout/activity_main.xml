@@ -65,10 +65,32 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_sum_activity"
         android:onClick="buttonOpenSumActivityOnClick"
+        android:text="@string/open_sum_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:onClick="buttonOpenNavigationDrawerActivityOnClick"
+        android:text="@string/open_navigation_drawer_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:onClick="buttonOpenStyleActivityOnClick"
+        android:text="@string/open_style_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

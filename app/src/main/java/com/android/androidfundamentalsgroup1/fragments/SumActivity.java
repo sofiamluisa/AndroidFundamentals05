@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.androidfundamentalsgroup1.Logging;
 import com.android.androidfundamentalsgroup1.R;
@@ -89,5 +90,11 @@ public class SumActivity extends AppCompatActivity implements SumListener {
     public void addTwoNumbers(int a, int b) {
         int sum = a + b;
         textViewSum.setText(getString(R.string.result_sum_from_fragment) + sum);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(SumActivity.this, R.string.back_button_pressed, Toast.LENGTH_LONG).show();
     }
 }
