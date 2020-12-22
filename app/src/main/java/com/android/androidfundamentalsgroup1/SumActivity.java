@@ -9,12 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
-public class SumActivity extends AppCompatActivity {
+public class SumActivity extends AppCompatActivity implements SumListener {
     public static final String FIRST_NUMBER = "firstNumber";
     public static final String SECOND_NUMBER = "secondNumber";
 
     private EditText editTextFirstNumber, editTextSecondNumber;
+    private TextView textViewSum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,9 @@ public class SumActivity extends AppCompatActivity {
 
         editTextFirstNumber = findViewById(R.id.editTextFirstNumber);
         editTextSecondNumber = findViewById(R.id.editTextSecondNumber);
+        textViewSum = findViewById(R.id.textViewSumResultFromFragmentValues);
+
+        displayFragment(new NumbersFragment());
     }
 
     // bundle option with setArguments and getArguments
@@ -77,5 +82,11 @@ public class SumActivity extends AppCompatActivity {
         SumResultFragment sumResultFragment = new SumResultFragment();
         sumResultFragment.setNumbers(firstNumber, secondNumber);
         displayFragment(sumResultFragment);
+    }
+
+    @Override
+    public void addTwoNumbers(int a, int b) {
+        int sum = a + b;
+        textViewSum.setText(getString(R.string.result_sum_from_fragment) + sum);
     }
 }

@@ -35,4 +35,8 @@
     <string name="open_sum_activity">Open Sum Activity</string>
     <string name="sum_with_bundle">Sum with Bundle</string>
     <string name="sum_with_method_setter">Sum with Method (setter)</string>
+    <string name="result_sum_from_fragment">\"Sum of the numbers received from fragment = \"</string>
+    <string name="send_numbers_to_activity">Send numbers to Activity</string>
+    <string name="second_number">Second number</string>
+    <string name="first_number">First number</string>
 </resources>
