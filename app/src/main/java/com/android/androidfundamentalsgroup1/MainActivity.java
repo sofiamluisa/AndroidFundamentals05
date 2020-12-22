@@ -272,4 +272,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent formActivity = new Intent(MainActivity.this, FormActivity.class);
         startActivity(formActivity);
     }
+
+    public void buttonOpenSumActivityOnClick(View view) {
+        Intent formActivity = new Intent(MainActivity.this, SumActivity.class);
+        startActivity(formActivity);
+    }
 }

@@ -30,4 +30,7 @@
     <string name="open_form_activity">Open Form Activity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_not_a_number">Please add a numeric value</string>
+    <string name="sum_result">\"The sum is = \"</string>
+    <string name="open_sum_activity">Open Sum Activity</string>
 </resources>
