@@ -33,4 +33,6 @@
     <string name="error_not_a_number">Please add a numeric value</string>
     <string name="sum_result">\"The sum is = \"</string>
     <string name="open_sum_activity">Open Sum Activity</string>
+    <string name="sum_with_bundle">Sum with Bundle</string>
+    <string name="sum_with_method_setter">Sum with Method (setter)</string>
 </resources>

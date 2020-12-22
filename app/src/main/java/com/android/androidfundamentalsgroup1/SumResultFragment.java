@@ -39,4 +39,9 @@ public class SumResultFragment extends Fragment {
 
         return view;
     }
+
+    public void setNumbers(int firstNumber, int secondNumber) {
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+    }
 }

@@ -68,4 +68,14 @@ public class SumActivity extends AppCompatActivity {
             Logging.show("null", nullPointerException.getMessage());
         }
     }
+
+    // method option with setter in Fragment
+    public void buttonSendNumbersToFragmentWithSetterOnClick(View view) {
+        int firstNumber = getNumber(editTextFirstNumber);
+        int secondNumber = getNumber(editTextSecondNumber);
+
+        SumResultFragment sumResultFragment = new SumResultFragment();
+        sumResultFragment.setNumbers(firstNumber, secondNumber);
+        displayFragment(sumResultFragment);
+    }
 }
