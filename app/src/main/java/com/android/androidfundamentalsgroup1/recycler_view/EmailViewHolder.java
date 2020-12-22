@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.recycler_view;
 
 import android.view.View;
 import android.widget.LinearLayout;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.androidfundamentalsgroup1.R;
 
 // step 5 = Extend RecyclerView.ViewHolder in a separated class
 // wrapper for email_item.xml views (translate the views in Java objects)

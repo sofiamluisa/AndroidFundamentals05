@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.recycler_view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.androidfundamentalsgroup1.R;
 
 import java.util.List;
 

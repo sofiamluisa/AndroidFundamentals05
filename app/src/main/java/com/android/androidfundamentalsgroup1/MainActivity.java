@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -21,6 +20,12 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.androidfundamentalsgroup1.activities.FormActivity;
+import com.android.androidfundamentalsgroup1.activities.SecondActivity;
+import com.android.androidfundamentalsgroup1.fragments.SumActivity;
+import com.android.androidfundamentalsgroup1.recycler_view.Email;
+import com.android.androidfundamentalsgroup1.recycler_view.EmailAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

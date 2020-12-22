@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.fragments;
 
 import android.os.Bundle;
 
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.android.androidfundamentalsgroup1.Logging;
+import com.android.androidfundamentalsgroup1.R;
 
 public class NumbersFragment extends Fragment implements View.OnClickListener {
 

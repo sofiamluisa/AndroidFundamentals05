@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/large_space"
-    tools:context=".NumbersFragment">
+    tools:context=".fragments.NumbersFragment">
 
     <EditText
         android:id="@+id/editTextFirstNumberFromFragment"

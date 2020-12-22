@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.recycler_view;
 
 public class Email {
     private int id;

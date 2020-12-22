@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.fragments;
 
 import android.os.Bundle;
 
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.android.androidfundamentalsgroup1.R;
 
 public class SumResultFragment extends Fragment {
     private TextView textViewResult;

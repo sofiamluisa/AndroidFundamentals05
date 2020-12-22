@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.android.androidfundamentalsgroup1.Logging;
+import com.android.androidfundamentalsgroup1.MainActivity;
+import com.android.androidfundamentalsgroup1.R;
 
 public class SecondActivity extends AppCompatActivity {
     private final String TAG = "SecondActivity";

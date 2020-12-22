@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormActivity">
+    tools:context=".activities.FormActivity">
 
     <EditText
         android:id="@+id/editTextPersonName"
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.android.androidfundamentalsgroup1.BlankFragment"
+        android:name="com.android.androidfundamentalsgroup1.fragments.BlankFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

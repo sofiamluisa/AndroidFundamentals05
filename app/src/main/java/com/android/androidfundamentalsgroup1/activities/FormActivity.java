@@ -1,4 +1,4 @@
-package com.android.androidfundamentalsgroup1;
+package com.android.androidfundamentalsgroup1.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.android.androidfundamentalsgroup1.Logging;
+import com.android.androidfundamentalsgroup1.R;
+import com.android.androidfundamentalsgroup1.fragments.BlankFragment;
 
 public class FormActivity extends AppCompatActivity {
     private static final String VALUE_SCORE = "score";
