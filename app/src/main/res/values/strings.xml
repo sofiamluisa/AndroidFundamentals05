@@ -30,6 +30,29 @@
     <string name="open_form_activity">Open Form Activity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_activity">You are in the first Activity, press the buuton to launch the second one</string>
+    <string name="click_me">Click me</string>
+    <string name="second_activity">You are now in the Second Activity.</string>
+    <string name="text_one">Text One</string>
+    <string name="text_two">Text Two</string>
+    <string name="text_three">Text Three</string>
+    <string name="button_text_one">Engineering is the use of scientific principles to design and build machines, structures, and other items, including bridges, tunnels, roads, vehicles, and buildings. The discipline of engineering encompasses a broad range of more specialized fields of engineering, each with a more specific emphasis on particular areas of applied mathematics, applied science, and types of application. See glossary of engineering.
+The term engineering is derived from the Latin ingenium, meaning "cleverness" and ingeniare, meaning "to contrive, devise".</string>
+    <string name="button_text_two">Engineering has existed since ancient times, when humans devised inventions such as the wedge, lever, wheel and pulley, etc.
+
+The term engineering is derived from the word engineer, which itself dates back to the 14th century when an engineer (literally, one who builds or operates a siege engine) referred to "a constructor of military engines." In this context, now obsolete, an "engine" referred to a military machine, i.e., a mechanical contraption used in war (for example, a catapult). Notable examples of the obsolete usage which have survived to the present day are military engineering corps, e.g., the U.S. Army Corps of Engineers.
+
+The word "engine" itself is of even older origin, ultimately deriving from the Latin ingenium (c. 1250), meaning "innate quality, especially mental power, hence a clever invention."
+
+Later, as the design of civilian structures, such as bridges and buildings, matured as a technical discipline, the term civil engineering[5] entered the lexicon as a way to distinguish between those specializing in the construction of such non-military projects and those involved in the discipline of military engineering.</string>
+    <string name="button_text_three">Interdisciplinary engineering draws from more than one of the principle branches of the practice. Historically, naval engineering and mining engineering were major branches. Other engineering fields are manufacturing engineering, acoustical engineering, corrosion engineering, instrumentation and control, aerospace, automotive, computer, electronic, information engineering, petroleum, environmental, systems, audio, software, architectural, agricultural, biosystems, biomedical,[70] geological, textile, industrial, materials,and nuclear engineering. These and other branches of engineering are represented in the 36 licensed member institutions of the UK Engineering Council.
+
+New specialties sometimes combine with the traditional fields and form new branches – for example, Earth systems engineering and management involves a wide range of subject areas including engineering studies, environmental science, engineering ethics and philosophy of engineering.</string>
+    <string name="send">Send</string>
+    <string name="message">Message</string>
+    <string name="reply_received">Reply received</string>
+    <string name="message_received">Message received</string>
+    <string name="error_message_text_empty">Put text here</string>
     <string name="error_not_a_number">Please add a numeric value</string>
     <string name="sum_result">\"The sum is = \"</string>
     <string name="open_sum_activity">Open Sum Activity</string>
