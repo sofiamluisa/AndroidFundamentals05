@@ -1,0 +1,575 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.android.androidfundamentalsgroup1\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".styles.StyleSamplesActivity\"></activity>\r\n        <activity\r\n            android:name=\".NavigationActivity\"\r\n            android:label=\"@string/title_activity_navigation\"\r\n            android:theme=\"@style/AppTheme.NoActionBar\" />\r\n        <activity\r\n            android:name=\".fragments.SumActivity\"\r\n            android:parentActivityName=\".MainActivity\">\r\n            <meta-data\r\n                android:name=\"android.support.PARENT_ACTIVITY\"\r\n                android:value=\".MainActivity\" />\r\n        </activity>\r\n        <activity android:name=\".activities.FormActivity\" />\r\n        <activity android:name=\".activities.SecondActivity\" />\r\n        <activity android:name=\".MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision a858154ee11a1353f4148b5b1a8b9183088c591e)
++++ app/src/main/AndroidManifest.xml	(date 1609804065196)
+@@ -11,7 +11,18 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".styles.StyleSamplesActivity"></activity>
++        <activity android:name=".CodeChallange4">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++        <activity android:name=".ActivityCardView">
++
++        </activity>
++        <activity android:name=".AlertsActivity"></activity>
++        <activity android:name=".styles.StyleSamplesActivity" />
+         <activity
+             android:name=".NavigationActivity"
+             android:label="@string/title_activity_navigation"
+@@ -25,13 +36,7 @@
+         </activity>
+         <activity android:name=".activities.FormActivity" />
+         <activity android:name=".activities.SecondActivity" />
+-        <activity android:name=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
++        <activity android:name=".MainActivity" />
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/android/androidfundamentalsgroup1/CodeChallange4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/android/androidfundamentalsgroup1/CodeChallange4.java	(date 1609804274928)
++++ app/src/main/java/com/android/androidfundamentalsgroup1/CodeChallange4.java	(date 1609804274928)
+@@ -0,0 +1,45 @@
++package com.android.androidfundamentalsgroup1;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.net.Uri;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.EditText;
++import android.widget.Toast;
++
++public class CodeChallange4 extends AppCompatActivity {
++
++    private EditText editTextWebSite;
++    private EditText editTextTextPhoneNumber ;
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_code_challange4);
++        editTextWebSite = findViewById(R.id.editTextWebSite);
++        editTextTextPhoneNumber = findViewById(R.id.editTextTextPhoneNumber);
++    }
++
++    public void buttonUrlOnClick(View view) {
++        Intent implicitIntent = new Intent(Intent.ACTION_VIEW);
++        implicitIntent.setData(Uri.parse("https://www.google.com/"));
++        startActivity(implicitIntent);
++    }
++
++    public void buttonLocationOnClick(View view) {
++        Intent implicitIntent = new Intent(Intent.ACTION_VIEW);
++        implicitIntent.setData(Uri.parse("geo:0,0?q=67.9222,26.5046(Lapland)"));
++        startActivity(implicitIntent);
++    }
++
++    public void buttonShareOnClick(View view) {
++        Toast.makeText(CodeChallange4.this, "You shared this text" , Toast.LENGTH_LONG).show();
++    }
++
++    public void buttonPhoneOnClick(View view) {
++        Intent implicitIntent = new Intent(Intent.ACTION_DIAL);
++        //implicitIntent.setData(Uri.Integerparse(editTextTextPhoneNumber));
++        startActivity(implicitIntent);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_code_challange4.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_code_challange4.xml	(date 1609804863111)
++++ app/src/main/res/layout/activity_code_challange4.xml	(date 1609804863111)
+@@ -0,0 +1,105 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".CodeChallange4">
++
++
++    <EditText
++        android:layout_marginTop="@dimen/small_margin"
++        android:id="@+id/editTextWebSite"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:ems="10"
++        android:hint="Enter a website"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <EditText
++        android:id="@+id/editTextLocation"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:ems="10"
++        android:hint="Click The "
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.502"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/buttonWebSite" />
++
++    <EditText
++        android:id="@+id/editTextText"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:ems="10"
++        android:hint="Enter a text"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.497"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/buttonLocation" />
++
++    <EditText
++        android:id="@+id/editTextTextPhoneNumber"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:ems="10"
++        android:hint="Enter a phone number"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.502"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/buttonText" />
++
++    <Button
++        android:id="@+id/buttonWebSite"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:text="Open Website"
++        android:onClick="buttonUrlOnClick"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextWebSite" />
++
++    <Button
++        android:id="@+id/buttonLocation"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:text="Open Location"
++        android:onClick="buttonLocationOnClick"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.501"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextLocation" />
++
++    <Button
++        android:id="@+id/buttonText"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="72dp"
++        android:text="Share Text"
++        android:onClick="buttonShareOnClick"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.501"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="@+id/editTextText" />
++
++    <Button
++        android:id="@+id/buttonCall"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="@dimen/small_margin"
++        android:text="Call"
++        android:onClick="buttonPhoneOnClick"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.498"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextTextPhoneNumber"
++        app:layout_constraintVertical_bias="0.033" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/android/androidfundamentalsgroup1/ActivityCardView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/android/androidfundamentalsgroup1/ActivityCardView.java	(date 1609801648988)
++++ app/src/main/java/com/android/androidfundamentalsgroup1/ActivityCardView.java	(date 1609801648988)
+@@ -0,0 +1,14 @@
++package com.android.androidfundamentalsgroup1;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class ActivityCardView extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.card_view_hobby);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">AndroidFundamentalsGroup1</string>\r\n    <string name=\"yes\">yes</string>\r\n    <string name=\"no\">no</string>\r\n    <string name=\"wi_fi\">Wi-fi</string>\r\n    <string name=\"search_for_names\">Search for names</string>\r\n    <string name=\"our_first_textview\">Our first TextView</string>\r\n    <string name=\"i_am_a_button\">I am a button</string>\r\n    <string name=\"full_name\">Full name</string>\r\n    <string name=\"a_accept_t_and_c\">A accept T and C</string>\r\n    <string name=\"first_text\">first text</string>\r\n    <string name=\"second_text\">second text</string>\r\n    <string name=\"new_text\">This is the new text</string>\r\n    <string name=\"default_full_name\">Magda Miu</string>\r\n    <string name=\"checkbox_checked\">Checkbox was checked</string>\r\n    <string name=\"checkbox_unchecked\">Checkbox was unchecked</string>\r\n    <string name=\"checkbox_state_checked\">Checkbox checked</string>\r\n    <string name=\"checkbox_state_unchecked\">Checkbox unchecked</string>\r\n    <string name=\"error_missing_text\">Please add some text</string>\r\n    <string name=\"top_long_text\">Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets. Android is developed by a consortium of developers known as the Open Handset Alliance and commercially sponsored by Google. It was unveiled in November 2007, with the first commercial Android device launched in September 2008.  It is free and open source software; its source code is known as Android Open Source Project (AOSP), which is primarily licensed under the Apache License. However most Android devices ship with additional proprietary software pre-installed,[10] most notably Google Mobile Services (GMS)[11] which includes core apps such as Google Chrome, the digital distribution platform Google Play and associated Google Play Services development platform. About 70 percent of Android smartphones run Google\\'s ecosystem;[12] competing Android ecosystems and forks include Fire OS (developed by Amazon) or LineageOS. However the \\\"Android\\\" name and logo are trademarks of Google which impose standards to restrict \\\"uncertified\\\" devices outside their ecosystem to use Android branding</string>\r\n    <string name=\"bottom_long_text\">The source code has been used to develop variants of Android on a range of other electronics, such as game consoles, digital cameras, portable media players, PCs and others, each with a specialized user interface. Some well known derivatives include Android TV for televisions and Wear OS for wearables, both developed by Google. Software packages on Android, which use the APK format, are generally distributed through proprietary application stores like Google Play Store, Samsung Galaxy Store, and Huawei AppGallery, or open source platforms like Aptoide or F-Droid.  Android has been the best-selling OS worldwide on smartphones since 2011 and on tablets since 2013. As of May 2017, it has over two billion monthly active users, the largest installed base of any operating system, and as of August 2020, the Google Play Store features over 3 million apps.[15] The current stable version is Android 11, released on September 8, 2020.</string>\r\n    <string name=\"select_an_android_version\">Select an Android version</string>\r\n    <string name=\"textview\">TextView</string>\r\n    <string name=\"hello_world\">Hello World!</string>\r\n    <string name=\"open_second_activity\">Open Second Activity</string>\r\n    <string name=\"hello_message\">hello from first activity</string>\r\n    <string name=\"button_for_startactivityforresult\">Button for startActivityForResult</string>\r\n    <string name=\"write_a_message_here\">Write a message here...</string>\r\n    <string name=\"error_missing_message\">Please add some text here...</string>\r\n    <string name=\"open_form_activity\">Open Form Activity</string>\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"error_not_a_number\">Please add a numeric value</string>\r\n    <string name=\"sum_result\">\\\"The sum is = \\\"</string>\r\n    <string name=\"open_sum_activity\">Open Sum Activity</string>\r\n    <string name=\"sum_with_bundle\">Sum with Bundle</string>\r\n    <string name=\"sum_with_method_setter\">Sum with Method (setter)</string>\r\n    <string name=\"result_sum_from_fragment\">\\\"Sum of the numbers received from fragment = \\\"</string>\r\n    <string name=\"send_numbers_to_activity\">Send numbers to Activity</string>\r\n    <string name=\"second_number\">Second number</string>\r\n    <string name=\"first_number\">First number</string>\r\n    <string name=\"back_button_pressed\">Back button was pressed</string>\r\n    <string name=\"title_activity_navigation\">NavigationActivity</string>\r\n    <string name=\"navigation_drawer_open\">Open navigation drawer</string>\r\n    <string name=\"navigation_drawer_close\">Close navigation drawer</string>\r\n    <string name=\"nav_header_title\">Android Studio</string>\r\n    <string name=\"nav_header_subtitle\">android.studio@android.com</string>\r\n    <string name=\"nav_header_desc\">Navigation header</string>\r\n    <string name=\"action_settings\">Settings</string>\r\n\r\n    <string name=\"menu_home\">Home</string>\r\n    <string name=\"menu_gallery\">Gallery</string>\r\n    <string name=\"menu_slideshow\">Slideshow</string>\r\n    <string name=\"open_navigation_drawer_activity\">Open Navigation Drawer Activity</string>\r\n    <string name=\"first_text_in_a_card_view\">first text in a cardview</string>\r\n    <string name=\"second_text_in_a_card_view\">Second text in a cardview</string>\r\n    <string name=\"third_text_in_a_card_view\">Third  text in a cardview</string>\r\n    <string name=\"open_style_activity\">Open Style Activity</string>\r\n    <string name=\"forth_text_in_a_card_view\">A new text, the 4th one...</string>\r\n    <string name=\"new_text_in_card\">This is the 5th text here...</string>\r\n</resources>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision a858154ee11a1353f4148b5b1a8b9183088c591e)
++++ app/src/main/res/values/strings.xml	(date 1609801566956)
+@@ -58,4 +58,11 @@
+     <string name="open_style_activity">Open Style Activity</string>
+     <string name="forth_text_in_a_card_view">A new text, the 4th one...</string>
+     <string name="new_text_in_card">This is the 5th text here...</string>
++    <string name="click">You clicked</string>
++    <string name="launch">Yes</string>
++    <string name="reminder">Remind me later</string>
++    <string name="cancel">Cancel</string>
++    <string name="notice">Date and Time Picker</string>
++    <string name="title">Hello, you can choose a date and a time</string>
++    <string name="cooking">Due to the pandemic, I discovered a new talent of mine and that one is to cook. I found out that I like trying new things in the kitchen,I tried lots of recipes, some of them were easier and some of them were harder. I like spending time in the kitchen nowadays and I like to surprise my friends and family with this new hobby of mine.</string>
+ </resources>
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"29.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.android.androidfundamentalsgroup1\"\r\n        minSdkVersion 21\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n        debug {\r\n\r\n        }\r\n    }\r\n\r\n}\r\n\r\ndependencies {\r\n    implementation fileTree(dir: 'libs', include: ['*.jar'])\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.1.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    implementation 'com.google.android.material:material:1.2.1'\r\n    implementation 'androidx.navigation:navigation-fragment:2.3.2'\r\n    implementation 'androidx.navigation:navigation-ui:2.3.2'\r\n    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'\r\n    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'\r\n    implementation 'androidx.cardview:cardview:1.0.0'\r\n    testImplementation 'junit:junit:4.12'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.1'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'\r\n    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha06'\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision a858154ee11a1353f4148b5b1a8b9183088c591e)
++++ app/build.gradle	(date 1609804773723)
+@@ -1,3 +1,4 @@
++
+ apply plugin: 'com.android.application'
+ 
+ android {
+@@ -6,7 +7,7 @@
+ 
+     defaultConfig {
+         applicationId "com.android.androidfundamentalsgroup1"
+-        minSdkVersion 21
++        minSdkVersion 24
+         targetSdkVersion 30
+         versionCode 1
+         versionName "1.0"
+@@ -38,8 +39,11 @@
+     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+     implementation 'androidx.cardview:cardview:1.0.0'
++    implementation 'com.google.android.material:material:1.0.0'
++    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+     testImplementation 'junit:junit:4.12'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha06'
++
+ }
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <dimen name=\"small_margin\">16dp</dimen>\r\n    <dimen name=\"small_padding\">16dp</dimen>\r\n    <dimen name=\"medium_font_size\">23sp</dimen>\r\n    <dimen name=\"small_dimension\">8dp</dimen>\r\n    <dimen name=\"extra_large_space\">128dp</dimen>\r\n    <dimen name=\"large_space\">64dp</dimen>\r\n    <dimen name=\"medium_space\">32dp</dimen>\r\n    <dimen name=\"extra_small_padding\">4dp</dimen>\r\n    <!-- Default screen margins, per the Android Design guidelines. -->\r\n    <dimen name=\"activity_horizontal_margin\">16dp</dimen>\r\n    <dimen name=\"activity_vertical_margin\">16dp</dimen>\r\n    <dimen name=\"nav_header_vertical_spacing\">8dp</dimen>\r\n    <dimen name=\"nav_header_height\">176dp</dimen>\r\n    <dimen name=\"fab_margin\">16dp</dimen>\r\n    <dimen name=\"small_corner_radius\">8dp</dimen>\r\n    <dimen name=\"small_elevation\">8dp</dimen>\r\n    <dimen name=\"large_padding\">16dp</dimen>\r\n    <dimen name=\"large_font_size\">26sp</dimen>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/dimens.xml	(revision a858154ee11a1353f4148b5b1a8b9183088c591e)
++++ app/src/main/res/values/dimens.xml	(date 1609801568755)
+@@ -18,4 +18,5 @@
+     <dimen name="small_elevation">8dp</dimen>
+     <dimen name="large_padding">16dp</dimen>
+     <dimen name="large_font_size">26sp</dimen>
++    <dimen name="super_extra_large">256dp</dimen>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_alerts.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_alerts.xml	(date 1609796800277)
++++ app/src/main/res/layout/activity_alerts.xml	(date 1609796800277)
+@@ -0,0 +1,60 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:orientation="vertical">
++
++        <TextView
++            android:id="@+id/textViewDatePicker"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="@dimen/large_font_size"
++            android:textStyle="italic" />
++
++        <Button
++            android:id="@+id/buttonDatePicker"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_gravity="center"
++            android:onClick="buttonOpenDatePickerOnClick"
++            android:text="Open DatePicker" />
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:orientation="vertical">
++
++            <TextView
++                android:id="@+id/textViewTimePicker"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:textSize="@dimen/medium_font_size"
++                android:textStyle="italic" />
++
++            <Button
++                android:id="@+id/buttonTimePicker"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:onClick="buttonOpenTimePickerOnClick"
++                android:text="Open TimePicker" />
++
++            <Button
++                android:id="@+id/buttonOpenDialog"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:background="@color/colorAccent"
++                android:onClick="buttonOpenDialogOnClick"
++                android:text="Open Dialog" />
++        </LinearLayout>
++    </LinearLayout>
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Tue Dec 08 18:27:37 EET 2020\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-6.5-bin.zip\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision a858154ee11a1353f4148b5b1a8b9183088c591e)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1609788854603)
+@@ -1,6 +1,6 @@
+-#Tue Dec 08 18:27:37 EET 2020
++#Mon Jan 04 21:34:14 EET 2021
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
+Index: app/src/main/res/layout/card_view_hobby.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/card_view_hobby.xml	(date 1609801568750)
++++ app/src/main/res/layout/card_view_hobby.xml	(date 1609801568750)
+@@ -0,0 +1,62 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++
++<androidx.cardview.widget.CardView
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:clickable="true"
++    android:foreground="?android:attr/selectableItemBackground"
++    app:cardBackgroundColor="#E6E6E6"
++    app:cardCornerRadius="8dp"
++    app:cardElevation="8dp">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="@color/white"
++        android:orientation="vertical">
++
++        <ImageView
++            android:id="@+id/imageView3"
++            android:layout_width="wrap_content"
++            android:layout_height="@dimen/super_extra_large"
++            android:background="@color/white"
++            app:srcCompat="@drawable/burger" />
++
++
++
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:orientation="vertical"
++                android:padding="@dimen/small_padding">
++
++                <TextView
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="vertical"
++                    android:text="Cooking"
++                    android:textStyle="italic"
++                    android:textSize="@dimen/large_font_size"/>
++
++                <TextView
++                    android:paddingTop="@dimen/medium_space"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:textSize="@dimen/medium_font_size"
++                    android:text="@string/cooking"></TextView>
++
++            </LinearLayout>
++
++
++
++    </LinearLayout>
++
++
++</androidx.cardview.widget.CardView>
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/android/androidfundamentalsgroup1/AlertsActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/android/androidfundamentalsgroup1/AlertsActivity.java	(date 1609797292850)
++++ app/src/main/java/com/android/androidfundamentalsgroup1/AlertsActivity.java	(date 1609797292850)
+@@ -0,0 +1,100 @@
++package com.android.androidfundamentalsgroup1;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.app.AlertDialog;
++import android.app.DatePickerDialog;
++import android.app.TimePickerDialog;
++import android.content.DialogInterface;
++import android.icu.util.Calendar;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.DatePicker;
++import android.widget.TextView;
++import android.widget.TimePicker;
++import android.widget.Toast;
++
++public class AlertsActivity extends AppCompatActivity {
++
++    private int year;
++    private int month;
++    private int day;
++    private int hour;
++    private int minute;
++    private TextView textViewDatePicker;
++    private TextView textViewTimePicker;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_alerts);
++
++        textViewDatePicker = findViewById(R.id.textViewDatePicker);
++        textViewTimePicker = findViewById(R.id.textViewTimePicker);
++
++        final Calendar c = Calendar.getInstance();
++        year = c.get(Calendar.YEAR);
++        month = c.get(Calendar.MONTH);
++        day = c.get(Calendar.DAY_OF_MONTH);
++        hour = c.get(Calendar.HOUR_OF_DAY);
++        minute = c.get(Calendar.MINUTE);
++    }
++
++    public void buttonOpenDatePickerOnClick(View view) {
++        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
++                new DatePickerDialog.OnDateSetListener() {
++
++                    @Override
++                    public void onDateSet(DatePicker view, int year,
++                                          int monthOfYear, int dayOfMonth) {
++
++                        textViewDatePicker.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
++                    }
++                }, year, month, day);
++        datePickerDialog.show();
++
++    }
++
++    public void buttonOpenTimePickerOnClick(View view) {
++        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
++                new TimePickerDialog.OnTimeSetListener() {
++                    @Override
++                    public void onTimeSet(TimePicker view, int hourOfDay,
++                                          int minute) {
++
++                        textViewTimePicker.setText(hourOfDay + ":" + minute);
++                    }
++                }, hour, minute, false);
++        timePickerDialog.show();
++    }
++
++    public void buttonOpenDialogOnClick(View view) {
++        AlertDialog.Builder builder = new AlertDialog.Builder(this);
++        builder.setTitle(R.string.notice);
++        builder.setMessage(R.string.title);
++
++// add the buttons
++        builder.setPositiveButton(R.string.launch, new DialogInterface.OnClickListener() {
++            @Override
++            public void onClick(DialogInterface dialogInterface, int i) {
++                Toast.makeText(AlertsActivity.this, getString(R.string.click) + " " + getString(R.string.launch), Toast.LENGTH_SHORT).show();
++            }
++        });
++        builder.setNeutralButton(R.string.reminder, new DialogInterface.OnClickListener() {
++            @Override
++            public void onClick(DialogInterface dialogInterface, int i) {
++                Toast.makeText(AlertsActivity.this, getString(R.string.click) + " " + getString(R.string.reminder), Toast.LENGTH_SHORT).show();
++            }
++        });
++        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
++            @Override
++            public void onClick(DialogInterface dialogInterface, int i) {
++                Toast.makeText(AlertsActivity.this, getString(R.string.click) + " " + getString(R.string.cancel), Toast.LENGTH_SHORT).show();
++            }
++        });
++
++// create and show the alert dialog
++        AlertDialog dialog = builder.create();
++        dialog.show();
++    }
++}
+\ No newline at end of file

@@ -11,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".styles.StyleSamplesActivity"></activity>
+        <activity android:name=".CodeChallenge4">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CardViewHobby">
+
+        </activity>
+        <activity android:name=".AlertsActivity"></activity>
+        <activity android:name=".styles.StyleSamplesActivity" />
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
@@ -25,13 +36,7 @@
         </activity>
         <activity android:name=".activities.FormActivity" />
         <activity android:name=".activities.SecondActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

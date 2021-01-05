@@ -18,4 +18,5 @@
     <dimen name="small_elevation">8dp</dimen>
     <dimen name="large_padding">16dp</dimen>
     <dimen name="large_font_size">26sp</dimen>
+    <dimen name="super_extra_large_space">256dp</dimen>
 </resources>

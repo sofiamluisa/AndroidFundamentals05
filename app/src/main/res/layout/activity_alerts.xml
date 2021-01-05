@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlertsActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="126dp">
+
+        <TextView
+            android:id="@+id/textViewDatePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/large_font_size"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/buttonDatePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonOpenDatePicker"
+            android:text="Open Date Picker" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="110dp">
+
+        <TextView
+            android:id="@+id/textViewTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font_size"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/buttonTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonOpenTimePicker"
+            android:text="Open Time Picker" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonOpenDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:onClick="buttonOpenDialog"
+        android:text="Open Dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

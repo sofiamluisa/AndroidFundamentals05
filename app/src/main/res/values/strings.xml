@@ -58,4 +58,12 @@
     <string name="open_style_activity">Open Style Activity</string>
     <string name="forth_text_in_a_card_view">A new text, the 4th one...</string>
     <string name="new_text_in_card">This is the 5th text here...</string>
+    <string name="notice">Date and Time Picker</string>
+    <string name="alert_title">Hello, in this app you can choose a date and a time.</string>
+    <string name="launch_app">Yes</string>
+    <string name="click">clicked</string>
+    <string name="reminde_me">Remind me later</string>
+    <string name="cancel">Cancel</string>
+    <string name="cooking_hobby">Due to the pandemic I discovered a new passion of mine, cooking. Lately I found myself more often in the kitchen trying different recipes, some of them were easier and some of there were harder. I like to surprise my friends and family with new recipes and with food from all around the world. I think this brings us closer and it\'s a way to learn about different cultures and traditions.</string>
+    <string name="cooking">Cooking</string>
 </resources>
